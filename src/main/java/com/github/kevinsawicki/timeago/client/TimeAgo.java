@@ -22,13 +22,13 @@
 package com.github.kevinsawicki.timeago.client;
 
 import com.github.kevinsawicki.timeago.client.resources.MessageBundle;
-
-import java.text.MessageFormat;
+import com.google.gwt.regexp.shared.RegExp;
+import com.google.gwt.regexp.shared.SplitResult;
 import java.util.Date;
 
 /**
  *
- * Time ago class that converts long millisecond and {@link Date} objects to
+ * Time ago class that converts long millisecond and {@link java.util.Date} objects to
  * time ago/from now {@link String} objects.
  * <p>
  * This class uses the messages from {@link MessageBundle} by default but those can
@@ -138,23 +138,23 @@ public class TimeAgo {
 		else if (seconds < 90)
 			time = this.minute;
 		else if (minutes < 45)
-			time = MessageFormat.format(this.minutes, Math.round(minutes));
+			time = format(this.minutes, Math.round(minutes));
 		else if (minutes < 90)
 			time = this.hour;
 		else if (hours < 24)
-			time = MessageFormat.format(this.hours, Math.round(hours));
+			time = format(this.hours, Math.round(hours));
 		else if (hours < 48)
 			time = this.day;
 		else if (days < 30)
-			time = MessageFormat.format(this.days, Math.floor(days));
+			time = format(this.days, Math.floor(days));
 		else if (days < 60)
 			time = this.month;
 		else if (days < 365)
-			time = MessageFormat.format(this.months, Math.floor(days / 30));
+			time = format(this.months, Math.floor(days / 30));
 		else if (years < 2)
 			time = this.year;
 		else
-			time = MessageFormat.format(this.years, Math.floor(years));
+			time = format(this.years, Math.floor(years));
 
 		return join(prefix, time, suffix);
 	}
@@ -169,7 +169,7 @@ public class TimeAgo {
 	 * @return non-null joined string
 	 */
 	public String join(final String prefix, final String time,
-			final String suffix) {
+					   final String suffix) {
 		StringBuilder joined = new StringBuilder();
 		if (prefix != null && prefix.length() > 0)
 			joined.append(prefix).append(' ');
@@ -432,5 +432,17 @@ public class TimeAgo {
 	public TimeAgo setYears(String years) {
 		this.years = years;
 		return this;
+	}
+
+	public static String format(final String format, final Object... args) {
+		final RegExp regex = RegExp.compile("%[a-z]");
+		final SplitResult split = regex.split(format);
+		final StringBuffer msg = new StringBuffer();
+		for (int pos = 0; pos < split.length() - 1; ++pos) {
+			msg.append(split.get(pos));
+			msg.append(args[pos].toString());
+		}
+		msg.append(split.get(split.length() - 1));
+		return msg.toString();
 	}
 }
