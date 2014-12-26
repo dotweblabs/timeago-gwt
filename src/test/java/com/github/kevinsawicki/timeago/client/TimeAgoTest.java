@@ -19,7 +19,7 @@
  * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
  * IN THE SOFTWARE.
  */
-package com.github.kevinsawicki.timeago.tests;
+package com.github.kevinsawicki.timeago.client;
 
 import com.github.kevinsawicki.timeago.client.TimeAgo;
 
