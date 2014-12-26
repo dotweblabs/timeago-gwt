@@ -1,6 +1,7 @@
-#Java timeago library
+#Java timeago library (GWT)
 
-This is a Java port of the [jquery-timeago](https://github.com/rmm5t/jquery-timeago) plug-in.  Please visit the [jquery-timeago](http://rmm5t.github.com/jquery-timeago/) project page to read more about fuzzy timestamps.
+This is a GWT port of the Java port of the [jquery-timeago](https://github.com/rmm5t/jquery-timeago) plug-in.
+Please visit the [jquery-timeago](http://rmm5t.github.com/jquery-timeago/) project page to read more about fuzzy timestamps.
 
 ##Building
 
@@ -26,8 +27,8 @@ This library is available from [Maven Central](http://search.maven.org/#search%7
 ```xml
 <dependency>
   <groupId>com.github.kevinsawicki</groupId>
-  <artifactId>timeago</artifactId>
-  <version>1.0.1</version>
+  <artifactId>timeago-gwt</artifactId>
+  <version>0.0.1</version>
 </dependency>
 ```
 
