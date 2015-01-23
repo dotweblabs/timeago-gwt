@@ -1,7 +1,6 @@
-package com.github.kevinsawicki.timeago.client.resources;
+package com.github.kerbymart.timeago.client.resources;
 
 import com.google.gwt.core.client.GWT;
-import com.google.gwt.i18n.client.LocalizableResource;
 import com.google.gwt.i18n.client.Constants;
 
 //@LocalizableResource.DefaultLocale("en_US")

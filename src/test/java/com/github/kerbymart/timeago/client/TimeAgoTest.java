@@ -19,14 +19,12 @@
  * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
  * IN THE SOFTWARE.
  */
-package com.github.kevinsawicki.timeago.client;
+package com.github.kerbymart.timeago.client;
 
-import com.github.kevinsawicki.timeago.client.TimeAgo;
-
-import java.text.MessageFormat;
 
 import com.google.gwt.junit.client.GWTTestCase;
-import junit.framework.TestCase;
+import com.google.gwt.regexp.shared.RegExp;
+import com.google.gwt.regexp.shared.SplitResult;
 
 /**
  *
@@ -98,7 +96,7 @@ public class TimeAgoTest extends GWTTestCase {
 		int minutes = 2;
 		String time = ago.timeAgo(ago(minutes * MINUTE));
 		String expected = ago.join(ago.getPrefixAgo(),
-				MessageFormat.format(ago.getMinutes(), minutes),
+				format(ago.getMinutes(), minutes),
 				ago.getSuffixAgo());
 		assertEquals(expected, time);
 	}
@@ -123,7 +121,7 @@ public class TimeAgoTest extends GWTTestCase {
 		String time = ago.timeAgo(ago(hours * HOUR));
 		String expected = ago
 				.join(ago.getPrefixAgo(),
-						MessageFormat.format(ago.getHours(), hours),
+						format(ago.getHours(), hours),
 						ago.getSuffixAgo());
 		assertEquals(expected, time);
 	}
@@ -147,7 +145,7 @@ public class TimeAgoTest extends GWTTestCase {
 		long days = 4;
 		String time = ago.timeAgo(ago(days * DAY));
 		String expected = ago.join(ago.getPrefixAgo(),
-				MessageFormat.format(ago.getDays(), days), ago.getSuffixAgo());
+				format(ago.getDays(), days), ago.getSuffixAgo());
 		assertEquals(expected, time);
 	}
 
@@ -170,7 +168,7 @@ public class TimeAgoTest extends GWTTestCase {
 		long months = 2;
 		String time = ago.timeAgo(ago(months * MONTH));
 		String expected = ago.join(ago.getPrefixAgo(),
-				MessageFormat.format(ago.getMonths(), months),
+				format(ago.getMonths(), months),
 				ago.getSuffixAgo());
 		assertEquals(expected, time);
 	}
@@ -195,13 +193,32 @@ public class TimeAgoTest extends GWTTestCase {
 		String time = ago.timeAgo(System.currentTimeMillis() - (years * YEAR));
 		String expected = ago
 				.join(ago.getPrefixAgo(),
-						MessageFormat.format(ago.getYears(), years),
+						format(ago.getYears(), years),
 						ago.getSuffixAgo());
 		assertEquals(expected, time);
 	}
 
 	@Override
 	public String getModuleName() {
-		return "com.github.kevinsawicki.timeago.TimeAgo";
+		return "com.github.kerbymart.timeago.TimeAgo";
+	}
+
+	@Override
+	protected void gwtSetUp() throws Exception {
+	}
+	@Override
+	protected void gwtTearDown() throws Exception {
+	}
+
+	public static String format(final String format, final Object... args) {
+		final RegExp regex = RegExp.compile("%[a-z]");
+		final SplitResult split = regex.split(format);
+		final StringBuffer msg = new StringBuffer();
+		for (int pos = 0; pos < split.length() - 1; ++pos) {
+			msg.append(split.get(pos));
+			msg.append(args[pos].toString());
+		}
+		msg.append(split.get(split.length() - 1));
+		return msg.toString();
 	}
 }
