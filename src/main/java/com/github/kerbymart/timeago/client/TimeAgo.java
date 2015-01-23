@@ -443,7 +443,7 @@ public class TimeAgo {
 //			msg.append(String.valueOf(arg));
 //		}
 		msg.append(split.get(0));
-		msg.append(String.valueOf(arg));
+		msg.append(String.valueOf(arg).split("\\.")[0]);
 		msg.append(split.get(split.length() - 1));
 		return msg.toString();
 	}
