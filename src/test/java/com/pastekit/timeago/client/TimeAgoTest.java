@@ -19,7 +19,7 @@
  * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
  * IN THE SOFTWARE.
  */
-package com.github.kerbymart.timeago.client;
+package com.pastekit.timeago.client;
 
 
 import com.google.gwt.junit.client.GWTTestCase;

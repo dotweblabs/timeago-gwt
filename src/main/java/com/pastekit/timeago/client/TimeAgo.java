@@ -19,11 +19,12 @@
  * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
  * IN THE SOFTWARE.
  */
-package com.github.kerbymart.timeago.client;
+package com.pastekit.timeago.client;
 
-import com.github.kerbymart.timeago.client.resources.MessageBundle;
+import com.pastekit.timeago.client.resources.MessageBundle;
 import com.google.gwt.regexp.shared.RegExp;
 import com.google.gwt.regexp.shared.SplitResult;
+
 import java.util.Date;
 
 /**
@@ -31,7 +32,7 @@ import java.util.Date;
  * Time ago class that converts long millisecond and {@link java.util.Date} objects to
  * time ago/from now {@link String} objects.
  * <p>
- * This class uses the messages from {@link com.github.kerbymart.timeago.client.resources.MessageBundle} by default but those can
+ * This class uses the messages from {@link com.pastekit.timeago.client.resources.MessageBundle} by default but those can
  * be changed after creation through one of the setter methods for a specified
  * time string.
  */

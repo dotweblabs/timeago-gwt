@@ -1,4 +1,4 @@
-package com.github.kerbymart.timeago.client.resources;
+package com.pastekit.timeago.client.resources;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.i18n.client.Constants;
