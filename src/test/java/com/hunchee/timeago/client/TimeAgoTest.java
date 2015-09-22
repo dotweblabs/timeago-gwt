@@ -19,12 +19,10 @@
  * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
  * IN THE SOFTWARE.
  */
-package com.pastekit.timeago.client;
+package com.hunchee.timeago.client;
 
 
 import com.google.gwt.junit.client.GWTTestCase;
-import com.google.gwt.regexp.shared.RegExp;
-import com.google.gwt.regexp.shared.SplitResult;
 
 /**
  *
@@ -200,7 +198,7 @@ public class TimeAgoTest extends GWTTestCase {
 
 	@Override
 	public String getModuleName() {
-		return "com.github.kerbymart.timeago.TimeAgo";
+		return "com.hunchee.timeago.TimeAgo";
 	}
 
 	@Override
