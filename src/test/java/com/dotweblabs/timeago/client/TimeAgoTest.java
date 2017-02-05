@@ -19,7 +19,7 @@
  * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
  * IN THE SOFTWARE.
  */
-package com.hunchee.timeago.client;
+package com.dotweblabs.timeago.client;
 
 
 import com.google.gwt.junit.client.GWTTestCase;
@@ -198,7 +198,7 @@ public class TimeAgoTest extends GWTTestCase {
 
 	@Override
 	public String getModuleName() {
-		return "com.hunchee.timeago.TimeAgo";
+		return "com.dotweblabs.timeago.TimeAgo";
 	}
 
 	@Override

@@ -26,9 +26,9 @@ This library is available from [Maven Central](http://search.maven.org/#search%7
 
 ```xml
 <dependency>
-  <groupId>com.github.kevinsawicki</groupId>
+  <groupId>com.dotweblabs</groupId>
   <artifactId>timeago-gwt</artifactId>
-  <version>0.0.1</version>
+  <version>0-SNAPSHOT</version>
 </dependency>
 ```
 

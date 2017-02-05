@@ -19,9 +19,9 @@
  * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
  * IN THE SOFTWARE.
  */
-package com.hunchee.timeago.client;
+package com.dotweblabs.timeago.client;
 
-import com.hunchee.timeago.client.resources.MessageBundle;
+import com.dotweblabs.timeago.client.resources.MessageBundle;
 import com.google.gwt.regexp.shared.RegExp;
 import com.google.gwt.regexp.shared.SplitResult;
 
@@ -32,7 +32,7 @@ import java.util.Date;
  * Time ago class that converts long millisecond and {@link java.util.Date} objects to
  * time ago/from now {@link String} objects.
  * <p>
- * This class uses the messages from {@link com.hunchee.timeago.client.resources.MessageBundle} by default but those can
+ * This class uses the messages from {@link MessageBundle} by default but those can
  * be changed after creation through one of the setter methods for a specified
  * time string.
  */

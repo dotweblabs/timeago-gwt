@@ -1,4 +1,4 @@
-package com.hunchee.timeago.client.resources;
+package com.dotweblabs.timeago.client.resources;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.i18n.client.Constants;
